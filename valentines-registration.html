@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day Registration 💕</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@300;400;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Nunito', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #ffdde1 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Floating hearts animation */
+        .heart {
+            position: fixed;
+            opacity: 0;
+            animation: float 10s infinite;
+            transform: translateY(100vh);
+        }
+
+        .heart:nth-child(1) { left: 10%; animation-delay: -3s; font-size: 20px; }
+        .heart:nth-child(2) { left: 30%; animation-delay: -1s; font-size: 25px; }
+        .heart:nth-child(3) { left: 50%; animation-delay: -5s; font-size: 18px; }
+        .heart:nth-child(4) { left: 70%; animation-delay: -2s; font-size: 22px; }
+        .heart:nth-child(5) { left: 90%; animation-delay: -7s; font-size: 20px; }
+        .heart:nth-child(6) { left: 20%; animation-delay: -4s; font-size: 24px; }
+        .heart:nth-child(7) { left: 40%; animation-delay: 0s; font-size: 19px; }
+        .heart:nth-child(8) { left: 60%; animation-delay: -6s; font-size: 26px; }
+        .heart:nth-child(9) { left: 80%; animation-delay: -1.5s; font-size: 21px; }
+        .heart:nth-child(10) { left: 15%; animation-delay: -8s; font-size: 23px; }
+        .heart:nth-child(11) { left: 35%; animation-delay: -2.5s; font-size: 20px; }
+        .heart:nth-child(12) { left: 55%; animation-delay: -4.5s; font-size: 18px; }
+        .heart:nth-child(13) { left: 75%; animation-delay: 1s; font-size: 25px; }
+        .heart:nth-child(14) { left: 25%; animation-delay: -3.5s; font-size: 22px; }
+        .heart:nth-child(15) { left: 65%; animation-delay: -9s; font-size: 19px; }
+        .heart:nth-child(16) { left: 5%; animation-delay: -5.5s; font-size: 24px; }
+        .heart:nth-child(17) { left: 45%; animation-delay: 2s; font-size: 21px; }
+        .heart:nth-child(18) { left: 85%; animation-delay: -6.5s; font-size: 23px; }
+        .heart:nth-child(19) { left: 12%; animation-delay: -1.8s; font-size: 20px; }
+        .heart:nth-child(20) { left: 52%; animation-delay: -7.5s; font-size: 26px; }
+        .heart:nth-child(21) { left: 92%; animation-delay: 3s; font-size: 18px; }
+        .heart:nth-child(22) { left: 28%; animation-delay: -4.8s; font-size: 22px; }
+        .heart:nth-child(23) { left: 68%; animation-delay: -2.8s; font-size: 25px; }
+        .heart:nth-child(24) { left: 38%; animation-delay: 4s; font-size: 19px; }
+        .heart:nth-child(25) { left: 78%; animation-delay: -8.5s; font-size: 24px; }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.3;
+            }
+            90% {
+                opacity: 0.3;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .container {
+            background: white;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(255, 105, 180, 0.3);
+            padding: 50px 40px;
+            max-width: 500px;
+            width: 100%;
+            position: relative;
+            z-index: 10;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-family: 'Pacifico', cursive;
+            color: #ff1493;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(255, 105, 180, 0.2);
+            font-weight: 400;
+        }
+
+        .subtitle {
+            font-family: 'Quicksand', sans-serif;
+            color: #ff69b4;
+            font-size: 1.1em;
+            font-weight: 500;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            font-family: 'Quicksand', sans-serif;
+            color: #d63384;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 0.95em;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #ffc0cb;
+            border-radius: 15px;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            background: #fff5f7;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #ff69b4;
+            background: white;
+            box-shadow: 0 0 10px rgba(255, 105, 180, 0.2);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+            font-family: inherit;
+        }
+
+        .gender-options {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .gender-option {
+            flex: 1;
+            min-width: 100px;
+        }
+
+        .gender-option input[type="radio"] {
+            display: none;
+        }
+
+        .gender-option label {
+            display: block;
+            padding: 12px 20px;
+            background: #fff5f7;
+            border: 2px solid #ffc0cb;
+            border-radius: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 0;
+        }
+
+        .gender-option input[type="radio"]:checked + label {
+            background: #ff69b4;
+            color: white;
+            border-color: #ff1493;
+            transform: scale(1.05);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #ff1493 0%, #ff69b4 100%);
+            color: white;
+            border: none;
+            border-radius: 20px;
+            font-family: 'Nunito', sans-serif;
+            font-size: 1.1em;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 20, 147, 0.3);
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 20, 147, 0.4);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        .bottom-message {
+            margin-top: 30px;
+            text-align: center;
+            padding-top: 25px;
+            border-top: 2px dashed #ffc0cb;
+        }
+
+        .bottom-message p {
+            font-family: 'Quicksand', sans-serif;
+            color: #ff69b4;
+            font-size: 1em;
+            font-weight: 600;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.7;
+            }
+        }
+
+        /* Cute popup modal */
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .popup-overlay.show {
+            display: flex;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .popup-content {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(255, 105, 180, 0.4);
+            animation: popupBounce 0.5s ease;
+            position: relative;
+        }
+
+        @keyframes popupBounce {
+            0% {
+                transform: scale(0.7);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .popup-icon {
+            font-size: 4em;
+            margin-bottom: 20px;
+            animation: swing 1s ease infinite;
+        }
+
+        @keyframes swing {
+            0%, 100% {
+                transform: rotate(-10deg);
+            }
+            50% {
+                transform: rotate(10deg);
+            }
+        }
+
+        .image-container {
+            margin: 10px 0;
+        }
+
+        .image-container img {
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .popup-message {
+            font-family: 'Quicksand', sans-serif;
+            color: #d63384;
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            line-height: 1.5;
+            font-weight: 600;
+        }
+
+        .popup-close-btn {
+            background: linear-gradient(135deg, #ff1493 0%, #ff69b4 100%);
+            color: white;
+            border: none;
+            padding: 12px 40px;
+            border-radius: 20px;
+            font-family: 'Nunito', sans-serif;
+            font-size: 1em;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 20, 147, 0.3);
+        }
+
+        .popup-close-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 20, 147, 0.4);
+        }
+
+        .apple-section {
+            margin-top: 40px;
+            text-align: center;
+            padding-top: 30px;
+            border-top: 2px dashed #ffc0cb;
+        }
+
+        .apple-image {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 20px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .apple-text {
+            color: #d63384;
+            font-size: 1.1em;
+            line-height: 1.6;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating hearts background -->
+    <div class="heart">💕</div>
+    <div class="heart">💝</div>
+    <div class="heart">💖</div>
+    <div class="heart">💗</div>
+    <div class="heart">💓</div>
+    <div class="heart">💕</div>
+    <div class="heart">💝</div>
+    <div class="heart">💖</div>
+    <div class="heart">💗</div>
+    <div class="heart">💓</div>
+    <div class="heart">💕</div>
+    <div class="heart">💝</div>
+    <div class="heart">💖</div>
+    <div class="heart">💗</div>
+    <div class="heart">💓</div>
+    <div class="heart">💕</div>
+    <div class="heart">💝</div>
+    <div class="heart">💖</div>
+    <div class="heart">💗</div>
+    <div class="heart">💓</div>
+    <div class="heart">💕</div>
+    <div class="heart">💝</div>
+    <div class="heart">💖</div>
+    <div class="heart">💗</div>
+    <div class="heart">💓</div>
+
+    <div class="container">
+        <div class="header">
+            <h1>💕 Blind Date 26' 💕</h1>
+            <div class="image-container">
+                <img src="https://media.tenor.com/QOnS5_VOv-wAAAAj/bubu-dudu-date-bubu-dudu-fries.gif?w=400&h=400&fit=crop" alt="Sweet Apple">
+            </div>
+            <p class="subtitle">Find your perfect 'blind' match this Valentine's!</p>
+        </div>
+
+        <form id="valentineForm">
+            <div class="form-group">
+                <label for="name">Your Name 💌</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address 📧</label>
+                <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="year">Year 🎓</label>
+                <select id="year" name="year" required>
+                    <option value="">Select your year</option>
+                    <option value="1st">1st Year</option>
+                    <option value="2nd">2nd Year</option>
+                    <option value="3rd">3rd Year</option>
+                    <option value="4th">4th Year</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Gender 🌸</label>
+                <div class="gender-options">
+                    <div class="gender-option">
+                        <input type="radio" id="male" name="gender" value="male" required>
+                        <label for="male">Male</label>
+                    </div>
+                    <div class="gender-option">
+                        <input type="radio" id="female" name="gender" value="female">
+                        <label for="female">Female</label>
+                    </div>
+                    <div class="gender-option">
+                        <input type="radio" id="other" name="gender" value="other">
+                        <label for="other">Other</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="preferences">About Yourself and Your Preferences 💭</label>
+                <textarea id="preferences" name="preferences" placeholder="Tell us about yourself and what you're looking for in a match..." required></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">💘 Register for Valentine's Day 💘</button>
+        </form>
+
+        <div class="bottom-message">
+            <p>💌 We will mail you when we find a match! 💌</p>
+        </div>
+
+    </div>
+
+    <!-- Cute Popup Modal -->
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup-content">
+            <div class="popup-icon" id="popupIcon">💕</div>
+            <div class="popup-message" id="popupMessage"></div>
+            <button class="popup-close-btn" onclick="closePopup()">Got it! 💖</button>
+        </div>
+    </div>
+
+    <script>
+        // Show cute popup
+        function showPopup(message, icon = '💕') {
+            document.getElementById('popupMessage').textContent = message;
+            document.getElementById('popupIcon').textContent = icon;
+            document.getElementById('popupOverlay').classList.add('show');
+        }
+
+        // Close popup
+        function closePopup() {
+            document.getElementById('popupOverlay').classList.remove('show');
+        }
+
+        // Close popup when clicking outside
+        document.getElementById('popupOverlay').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closePopup();
+            }
+        });
+
+        document.getElementById('valentineForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Validate all required fields
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const year = document.getElementById('year').value;
+            const genderSelected = document.querySelector('input[name="gender"]:checked');
+            const preferences = document.getElementById('preferences').value.trim();
+
+            // Check if all fields are filled
+            if (!name) {
+                showPopup('Please enter your name! 💕', '🥺');
+                document.getElementById('name').focus();
+                return;
+            }
+
+            if (!email) {
+                showPopup('Please enter your email address! 📧', '💌');
+                document.getElementById('email').focus();
+                return;
+            }
+
+            // Validate email format
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                showPopup('Please enter a valid email address! 📧', '💌');
+                document.getElementById('email').focus();
+                return;
+            }
+
+            if (!year) {
+                showPopup('Please select your year! 🎓', '📚');
+                document.getElementById('year').focus();
+                return;
+            }
+
+            if (!genderSelected) {
+                showPopup('Please select your gender! 🌸', '💐');
+                return;
+            }
+
+            if (!preferences) {
+                showPopup('Please tell us your preferences! 💭', '💝');
+                document.getElementById('preferences').focus();
+                return;
+            }
+
+            // All validation passed - prepare data for Google Sheets
+            const formData = {
+                name: name,
+                email: email,
+                year: year,
+                gender: genderSelected.value,
+                preferences: preferences,
+                timestamp: new Date().toLocaleString()
+            };
+
+            // Replace 'YOUR_GOOGLE_SCRIPT_URL' with your actual Google Apps Script Web App URL
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbzOicbDHkIfoKVGfVS3pUScUXUKbbzZvviqyIM1K6rWwHVEHD-4KZqvLBD2ki-aEKtP/exec';
+            
+            // Show loading state
+            const submitBtn = document.querySelector('.submit-btn');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '⏳ Submitting...';
+            submitBtn.disabled = true;
+
+            // Send to Google Sheets
+            fetch(scriptURL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(() => {
+                // Success - redirect to Google
+                window.location.href = 'valentines-thankyou.html';
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+                showPopup('Oops! Something went wrong. Please try again! 🥺', '😢');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day 2026 💕</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #ffeef8 0%, #ffe0f0 50%, #ffd4e8 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Subtle floating hearts */
+        .heart {
+            position: fixed;
+            font-size: 20px;
+            opacity: 0.15;
+            animation: gentleFloat 15s infinite ease-in-out;
+            pointer-events: none;
+        }
+
+        .heart:nth-child(1) { 
+            left: 15%; 
+            top: 20%;
+            animation-delay: 0s; 
+        }
+        .heart:nth-child(2) { 
+            left: 75%; 
+            top: 30%;
+            animation-delay: 3s; 
+        }
+        .heart:nth-child(3) { 
+            left: 85%; 
+            top: 70%;
+            animation-delay: 6s; 
+        }
+        .heart:nth-child(4) { 
+            left: 20%; 
+            top: 75%;
+            animation-delay: 9s; 
+        }
+
+        @keyframes gentleFloat {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0.1;
+            }
+            50% {
+                transform: translateY(-20px) rotate(5deg);
+                opacity: 0.2;
+            }
+        }
+
+        .container {
+            text-align: center;
+            max-width: 700px;
+            width: 100%;
+            animation: fadeInUp 1.2s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Decorative hearts at top */
+        .hearts-decoration {
+            font-size: 3em;
+            margin-bottom: 40px;
+            letter-spacing: 20px;
+            animation: heartPulse 2s infinite ease-in-out;
+        }
+
+        @keyframes heartPulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.8;
+            }
+            50% {
+                transform: scale(1.1);
+                opacity: 1;
+            }
+        }
+
+        h1 {
+            color: #d63384;
+            font-size: 3em;
+            line-height: 1.4;
+            margin-bottom: 60px;
+            font-weight: 300;
+            letter-spacing: 1px;
+            animation: fadeInUp 1.2s ease 0.3s both;
+        }
+
+        h1 strong {
+            font-weight: 600;
+            color: #ff1493;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 20px 60px;
+            background: linear-gradient(135deg, #ff1493 0%, #ff69b4 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.3em;
+            font-weight: 500;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 30px rgba(255, 20, 147, 0.3);
+            animation: fadeInUp 1.2s ease 0.6s both;
+            border: none;
+            cursor: pointer;
+            letter-spacing: 0.5px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(255, 20, 147, 0.4);
+            background: linear-gradient(135deg, #ff0080 0%, #ff1493 100%);
+        }
+
+        .cta-button:active {
+            transform: translateY(-2px);
+        }
+
+        /* Subtle sparkle effect */
+        .sparkle {
+            position: fixed;
+            width: 4px;
+            height: 4px;
+            background: #ff69b4;
+            border-radius: 50%;
+            opacity: 0;
+            animation: sparkleEffect 3s infinite;
+            pointer-events: none;
+        }
+
+        .sparkle:nth-child(5) { left: 30%; top: 25%; animation-delay: 0.5s; }
+        .sparkle:nth-child(6) { left: 65%; top: 40%; animation-delay: 1.5s; }
+        .sparkle:nth-child(7) { left: 25%; top: 60%; animation-delay: 2.5s; }
+        .sparkle:nth-child(8) { left: 70%; top: 75%; animation-delay: 1s; }
+
+        @keyframes sparkleEffect {
+            0%, 100% {
+                opacity: 0;
+                transform: scale(0);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Small decorative text */
+        .subtitle {
+            position: absolute;
+            bottom: 40px;
+            width: 100%;
+            text-align: center;
+            color: #ff69b4;
+            font-size: 0.9em;
+            opacity: 0.6;
+            font-style: italic;
+            animation: fadeInUp 1.2s ease 0.9s both;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .hearts-decoration {
+                font-size: 2em;
+                letter-spacing: 15px;
+            }
+
+            .cta-button {
+                font-size: 1.1em;
+                padding: 18px 45px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating hearts background -->
+    <div class="heart">💕</div>
+    <div class="heart">💝</div>
+    <div class="heart">💖</div>
+    <div class="heart">💗</div>
+
+    <!-- Sparkles -->
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+
+    <div class="container">
+        <div class="hearts-decoration">💕</div>
+        
+        <h1>
+            Ft. <strong>Blind Date 26'</strong><br>
+            Try giving it a shot!
+        </h1>
+
+        <a href="valentines-registration.html" class="cta-button">
+            Find Your Match 💘
+        </a>
+    </div>
+
+    <div class="subtitle">Love is just a click away...</div>
+</body>
+</html>
