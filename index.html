@@ -184,6 +184,98 @@
             animation: fadeInUp 1.2s ease 0.9s both;
         }
 
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal.active {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+            padding: 50px 40px;
+            border-radius: 20px;
+            text-align: center;
+            max-width: 450px;
+            width: 90%;
+            box-shadow: 0 20px 60px rgba(100, 100, 100, 0.3);
+            animation: slideUp 0.4s ease;
+            border: 3px solid #bbb;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .sad-emoji {
+            font-size: 4em;
+            margin-bottom: 20px;
+            animation: sadBounce 1.5s infinite ease-in-out;
+        }
+
+        @keyframes sadBounce {
+            0%, 100% { transform: translateY(0) rotateZ(-5deg); }
+            50% { transform: translateY(-10px) rotateZ(5deg); }
+        }
+
+        .modal-content h2 {
+            color: #666;
+            font-size: 2em;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .modal-content p {
+            color: #777;
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .close-button {
+            display: inline-block;
+            padding: 12px 40px;
+            background: linear-gradient(135deg, #999 0%, #777 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1em;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            letter-spacing: 0.5px;
+        }
+
+        .close-button:hover {
+            background: linear-gradient(135deg, #888 0%, #666 100%);
+            transform: translateY(-2px);
+        }
+
         @media (max-width: 600px) {
             h1 {
                 font-size: 2em;
@@ -198,15 +290,27 @@
                 font-size: 1.1em;
                 padding: 18px 45px;
             }
+
+            .modal-content {
+                padding: 40px 25px;
+            }
+
+            .sad-emoji {
+                font-size: 3em;
+            }
+
+            .modal-content h2 {
+                font-size: 1.5em;
+            }
         }
     </style>
 </head>
 <body>
     <!-- Floating hearts background -->
     <div class="heart">💕</div>
-    <div class="heart">💝</div>
-    <div class="heart">💖</div>
     <div class="heart">💗</div>
+    <div class="heart">💖</div>
+    <div class="heart">💝</div>
 
     <!-- Sparkles -->
     <div class="sparkle"></div>
@@ -222,11 +326,41 @@
             Try giving it a shot!
         </h1>
 
-        <a href="valentines-registration.html" class="cta-button">
+        <button class="cta-button" onclick="showPopup()">
             Find Your Match 💘
-        </a>
+        </button>
     </div>
 
     <div class="subtitle">Love is just a click away...</div>
+
+    <!-- Sad Popup Modal -->
+    <div id="sadModal" class="modal">
+        <div class="modal-content">
+            <div class="sad-emoji">😢</div>
+            <h2>Oh no! Time's Up...</h2>
+            <p>The registration period for Blind Date 26' has ended. Thanks for your interest. Better luck next Valentine's Day! 💔</p>
+            <button class="close-button" onclick="closePopup()">
+                Close
+            </button>
+        </div>
+    </div>
+
+    <script>
+        function showPopup() {
+            document.getElementById('sadModal').classList.add('active');
+        }
+
+        function closePopup() {
+            document.getElementById('sadModal').classList.remove('active');
+        }
+
+        // Close modal if user clicks outside of it
+        window.onclick = function(event) {
+            const modal = document.getElementById('sadModal');
+            if (event.target === modal) {
+                modal.classList.remove('active');
+            }
+        }
+    </script>
 </body>
 </html>
